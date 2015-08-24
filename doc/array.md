@@ -18,10 +18,9 @@
 
 一系列值包裹在括号中整体赋给一个数组变量，一系列值的分隔符定义在IFS中，缺点是无法定义稀疏数组
 
-```for student in students[@]```
-```do```
+```for student in students[@]
+   do
 	echo $student
-
    done```
 
 这是在shell中遍历数组值的方法
@@ -30,4 +29,15 @@
 ```students=([0]=Karl [1]="Jim" [2]="Leo Karl")```
 主要适合于创建稀疏数组
 
+#####从源中一次全部读取(这是一次全部的特殊情况,括号中可以是文件名扩展或是任何命令或函数的输出)
+```hosts=( $(cat /etc/hosts | grep -v -e"^$" -e "^#") )```
 
+#####从输入中读取(由read命令的-a标志实现)
+```IFS=":" printf "1:2:3" | read -a dict```
+
+#####使用readarray命令实现从文件中按换行符读取数据
+```readarray -n 4 -s 2 /etc/hosts```
+
+
+
+ 
