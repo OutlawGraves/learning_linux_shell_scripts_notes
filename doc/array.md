@@ -18,9 +18,8 @@
 
 一系列值包裹在括号中整体赋给一个数组变量，一系列值的分隔符定义在IFS中，缺点是无法定义稀疏数组
 
-```for student in students[@]
-
-   do
+```for student in students[@]```
+```do```
 	echo $student
 
    done```
