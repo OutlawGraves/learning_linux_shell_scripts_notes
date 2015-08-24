@@ -35,8 +35,9 @@
 #####从输入中读取(由read命令的-a标志实现)
 ```IFS=":" printf "1:2:3" | read -a dict```
 
-#####使用readarray命令实现从文件中按换行符读取数据
-```readarray -n 4 -s 2 /etc/hosts```
+#####使用readarray命令实现从文件中按换行符读取数据,其中-n标志实现读取的行数,-s实现可跳过的行数
+```readarray -n 4 -s 2 hosts < /etc/hosts```
+###数组访问
 
 
 
