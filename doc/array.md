@@ -47,4 +47,8 @@
 
 
 #####2.用变量索引访问
-This is an [example link](http://example.com/).
+`beattles=(John Paul Ringo);for index in $(seq 0 $((${#beattles[@]} - 1))`
+
+[bubble.sh](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/example/array/index.sh)
+
+#####3.从数组中选择元素(可以实现从数组中检索出一定范围的元素)
