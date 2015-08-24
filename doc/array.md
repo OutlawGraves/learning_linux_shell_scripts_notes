@@ -18,7 +18,7 @@
 
 一系列值包裹在括号中整体赋给一个数组变量，一系列值的分隔符定义在IFS中，缺点是无法定义稀疏数组
 
-*IFS:内部字段分隔符(Internal Field Separator*
+*IFS:内部字段分隔符(Internal Field Separator)*
 
 ```for student in students[@]
    do
@@ -47,5 +47,3 @@
 
 #####2.用变量索引访问
 
-
- 
