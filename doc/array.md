@@ -11,7 +11,7 @@
 #####1.一次一个(每次对一个元素进行赋值)
 ```numberarray[0]=zero;numberarray[2]=two;numberarray[3]="one one one"```
 
-在linux shell中可以实现定义稀疏的数组，数组值含义特殊字符时需要使用转义字符进行转义
+在linux shell中可以实现定义稀疏的数组，数组值含有特殊字符时需要使用转义字符进行转义
 
 #####2.一次全部(使用括号将一组值赋给数组变量)
 ```students=(Tom "J Klon" Mark);IFS=";";students=(Tom;"Lon Ka";Jklon)```
