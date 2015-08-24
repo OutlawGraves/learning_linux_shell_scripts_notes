@@ -69,7 +69,7 @@
 `hobby=( "${students[@]}" )`
 
 #####2.向数组追加元素
-`hobbies=( '${students[@]}' "lol game" );hobbies[${#hobbies[@}]="lol game"`
+`students=( "${students[@]}" "lol game" );hobbies[${#hobbies[@}]="lol game"`
 
 #####3.从数组中删除元素(unset myarray 可以实现完成删除数组)
 `myarray[7]=;unset myarray[7]`
