@@ -20,7 +20,7 @@
 
 *IFS:内部字段分隔符(Internal Field Separator)*
 
-```for student in students[@]
+```for student in "${students[@]}"
    do
 	echo $student
    done```
@@ -35,7 +35,7 @@
 ```hosts=( $(cat /etc/hosts | grep -v -e"^$" -e "^#") )```
 
 #####5.从输入中读取(由read命令的-a标志实现)
-```IFS=":" printf "1:2:3" | read -a dict```
+```printf "1:2:3" | IFS=":" read -a dict```
 
 #####6.使用readarray命令实现从文件中按换行符读取数据,其中-n标志实现读取的行数,-s实现可跳过的行数
 ```readarray -n 4 -s 2 hosts < /etc/hosts```
