@@ -19,8 +19,16 @@
 一系列值包裹在括号中整体赋给一个数组变量，一系列值的分隔符定义在IFS中，缺点是无法定义稀疏数组
 
 ```for student in students[@]
-   do 
+
+   do
 	echo $student
+
    done```
 
 这是在shell中遍历数组值的方法
+
+#####按索引访问
+```students=([0]=Karl [1]="Jim" [2]="Leo Karl")```
+主要适合于创建稀疏数组
+
+
