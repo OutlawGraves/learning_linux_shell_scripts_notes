@@ -13,3 +13,14 @@
 
 在linux shell中可以实现定义稀疏的数组，数组值含义特殊字符时需要使用转义字符进行转义
 
+#####一次全部(使用括号将一组值赋给数组变量)
+```students=(Tom "J Klon" Mark);IFS=";";students=(Tom;"Lon Ka";Jklon)```
+
+一系列值包裹在括号中整体赋给一个数组变量，一系列值的分隔符定义在IFS中，缺点是无法定义稀疏数组
+
+```for student in students[@]
+   do 
+	echo $student
+   done```
+
+这是在shell中遍历数组值的方法
