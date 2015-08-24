@@ -52,3 +52,13 @@
 这是一个实现冒泡排序的shell脚本[bubble.sh](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/example/array/bubblesort.sh)
 
 #####3.从数组中选择元素(可以实现从数组中检索出一定范围的元素)
+`food={apple eggs grapes};echo ${food[@]:1:2};echo ${food[@]:2}`
+实现访问数组中从索引位置开始的多个元素
+
+#####4.显示整个数组
+`printf "Distro: %s\n" "${distros[@]}"`
+
+###关联数组(数组索引为文本形式)
+
+
+
