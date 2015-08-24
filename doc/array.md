@@ -52,7 +52,7 @@
 这是一个实现冒泡排序的shell脚本[bubble.sh](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/example/array/bubblesort.sh)
 
 #####3.从数组中选择元素(可以实现从数组中检索出一定范围的元素)
-`food={apple eggs grapes};echo ${food[@]:1:2};echo ${food[@]:2}`
+`food={apple eggs grapes};echo "${food[@]:1:2}";echo "${food[@]:2}"`
 实现访问数组中从索引位置开始的多个元素
 
 #####4.显示整个数组
@@ -61,4 +61,21 @@
 ###3.关联数组(数组索引为文本形式)
 `beattles=([single]=John [bassist]=Paul [drummer]=Ringo);for musician in singer bassist drummer do echo "The ${musician} is ${battles[$musician]}." done`
 
+关联数组可以实现对索引名称的反向引用
+`for instrument in "${!battles[@]}" do echo "The $instrument is ${battles[$instrument]}" done`
 
+###4.数组操作
+#####1.数组的复制(实现一个数组的复制非常简单,但对于稀疏数组其索引值将不按照这种方式传递)
+`hobby=( "${students[@]}" )`
+
+#####2.向数组追加元素
+`hobbies=( '${students[@]}' "lol game" );hobbies[${#hobbies[@}]="lol game"`
+
+#####3.从数组中删除元素(unset myarray 可以实现完成删除数组)
+`myarray[7]=;unset myarray[7]`
+
+这两者是有区别的,前者只是将其设置为空字符串,而后者可以实现完成删除字符串
+
+###5.高级技术
+
+###6.本章小结
