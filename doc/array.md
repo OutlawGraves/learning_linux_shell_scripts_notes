@@ -5,15 +5,10 @@
 
 + 文本
 + 数字
-<<<<<<< HEAD
-
 ##数组赋值
 数组赋值可以一次一个,一次多个,或按索引进行赋值，甚至可以实现从各种来源对数组进行赋值，包括通配符扩展和程序的输出
 ###一次一个(每次对一个元素进行赋值)
-numberarray[0]=zero numberarray[2]=two numberarray[3]="one one one" 在linux shell中可以实现定义稀疏的数组，数组值含义特殊字符时需要使用转义字符进行转义
+numberarray[0]=zero numberarray[2]=two numberarray[3]="one one one" 
 
-
-
-=======
->>>>>>> 05293570eb2c8bcef2c0856dd91035f4e190ad85
+在linux shell中可以实现定义稀疏的数组，数组值含义特殊字符时需要使用转义字符进行转义
 
