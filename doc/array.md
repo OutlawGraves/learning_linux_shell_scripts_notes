@@ -18,6 +18,8 @@
 
 一系列值包裹在括号中整体赋给一个数组变量，一系列值的分隔符定义在IFS中，缺点是无法定义稀疏数组
 
+*IFS:内部字段分隔符(Internal Field Separator*
+
 ```for student in students[@]
    do
 	echo $student
@@ -38,7 +40,12 @@
 #####6.使用readarray命令实现从文件中按换行符读取数据,其中-n标志实现读取的行数,-s实现可跳过的行数
 ```readarray -n 4 -s 2 hosts < /etc/hosts```
 ###2.数组访问
+访问数组必须使用花括号,省略花括号将只访问数组的第一个元素
 
+#####1.数组长度
+```arraylen=${#myarray[@]};arraylen=${#myarray[*]}```
+
+#####2.用变量索引访问
 
 
  
