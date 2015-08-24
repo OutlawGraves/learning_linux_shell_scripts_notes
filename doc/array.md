@@ -58,7 +58,7 @@
 #####4.显示整个数组
 `printf "Distro: %s\n" "${distros[@]}"`
 
-###关联数组(数组索引为文本形式)
-
+###3.关联数组(数组索引为文本形式)
+`beattles=([single]=John [bassist]=Paul [drummer]=Ringo);for musician in singer bassist drummer do echo "The ${musician} is ${battles[$musician]}." done`
 
 
