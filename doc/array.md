@@ -43,7 +43,7 @@
 访问数组必须使用花括号,省略花括号将只访问数组的第一个元素
 
 #####1.数组长度
-`arraylen=${\#myarray[@]};arraylen=${\#myarray[*]}`
+`arraylen=${#myarray[@]};arraylen=${#myarray[*]}`
 
 #####2.用变量索引访问
 
