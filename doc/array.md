@@ -49,6 +49,6 @@
 #####2.用变量索引访问
 `beattles=(John Paul Ringo);for index in $(seq 0 $((${#beattles[@]} - 1))`
 
-[bubble.sh](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/example/array/index.sh)
+这是一个实现冒泡排序的shell脚本[bubble.sh](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/example/array/bubblesort.sh)
 
 #####3.从数组中选择元素(可以实现从数组中检索出一定范围的元素)
