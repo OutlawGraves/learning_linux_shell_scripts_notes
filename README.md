@@ -1,1 +1,2 @@
-# learning_linux_shell_scripts_notes
+#Learning Linux shell scripts notes
+some notes about learning Linux shell
