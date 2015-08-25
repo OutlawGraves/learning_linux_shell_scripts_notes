@@ -54,7 +54,6 @@ Shell将变量$?设置为上一次运行命令返回的代码
 + TMOUT 用于内置命令read,select和交互式bash shell,如果该参数被删除或设为0则被忽略,如果为正,则使用它的前3个命令在$TMOUT秒后超时
 + PPID 是调用Shell或Shell脚本的进程ID,$$是Shell的进程ID
 
-###3.本章小结
 
 ###1.变量的用法
 `variable=value;echo ${variable}`
