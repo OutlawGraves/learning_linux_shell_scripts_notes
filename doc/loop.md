@@ -10,7 +10,7 @@ for循环遍历一个序列中的每一个元素直到终点
 
 #####1.for循环的使用时机
 #####2.向for提供数据
-`fruits="apple orange pear";for fruit in fruits;do statement(s) done;statement(s)`
+`fruits="apple orange pear";for fruit in $fruits;do statement(s) done;statement(s)`
 
 这里for循环输入不再是硬编码的值,而是可以提供一个变量,这里的字段间的分隔符由IFS定义
 
