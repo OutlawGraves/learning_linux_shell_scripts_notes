@@ -47,7 +47,14 @@ Shell将变量$?设置为上一次运行命令返回的代码
 使用unset命令可以实现变量的删除,将变量的值设为空字符串,将变量直接设为空字符串与使用unset是不一样的
 
 ###2.预定义变量和标准变量
++ HOME 是当前用户的主目录的路径
++ IFS 列出当成空格使用的字符集合,默认值为<space><tab><newline>
++ SECONDS 返回Shell运行的整秒数,它是脚本运行的时间,而不是调用它的shell的运行时间.如果将SECONDS修改为其他整数,它从那个整数开始计数.删除则会导致其成为普通变量
++ RANDOM 产生0~32767间的随机数.
++ TMOUT 用于内置命令read,select和交互式bash shell,如果该参数被删除或设为0则被忽略,如果为正,则使用它的前3个命令在$TMOUT秒后超时
++ PPID 是调用Shell或Shell脚本的进程ID,$$是Shell的进程ID
 
+###3.本章小结
 
 ###1.变量的用法
 `variable=value;echo ${variable}`
