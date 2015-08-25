@@ -1,4 +1,36 @@
 #变量
+变量对于编程语言是至关重要的,有了变量,我们可以基于变量的状态来修改脚本行为,也可以修改变量来反映外部环境的变化
+
+
+###1.使用变量
+`echo $PATH;PATH=/user/bin`
+
+在Linux Shell中引用变量需要在其前添加美元符号,而在赋值时不需要
+
+#####1.类型
+在Linux Shell没有类型一说,所有变量的类型都是字符串,但是有些程序在处理字符串时会将其理解为数字，变量无需显示声明,没有赋值的变量等于包含空字符串
+
+#####2.变量的赋值
++ 显式定义:VAR=value
++ 读取:read VAR
++ 命令替换:VAR=`date`,VAR=$(date)
+
+`variable=foo;read variable;read firstname secondname`
+在linux shell中可以用等号进行变量赋值,也可以通过read命令从终端读取输入
+
+`read message</etc/motd;while read message;do statement(s) done </etc/motd`
+read命令也可以实现从外部文件读取输入默认是读取一行,通过循环语句可以实现循环的读取
+
+`TODAY=`date +%A;TODAY=$(date +%A)`
+变量赋值的另一种情况是将值设置为某个给定命令的输出
+
+#####3.位置参数
+`param.sh first second;if [ "$#" -ne "2" ];then statement(s);fi`
+参数在脚本中通过命令行所处的位置进行引用:$0是命令本身,$1是第一个参数,$2是第二个参数,以此类推,这些变量值无法修改,其中$#存储着参数数量.
+
+__shift命令实现参数的一次移位,首先截去$1，然后是$2,#$的值相应的减少,shift命令无法逆向进行,shift 3 则可以实现一次截去多个参数__
+
+
 
 ###1.变量的用法
 `variable=value;echo ${variable}`
