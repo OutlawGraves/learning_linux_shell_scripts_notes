@@ -110,5 +110,13 @@ __在变量命名上,通常对常数,文件名等内容的变量使用大写,而
 前者实现变量转换为大写,后者实现变量转换为小写
 
 #####5.提供默认值
++ {varname:-word} 如果varname存在且非null,则返回其值,否则返回word(如果变量未定义,则返回默认值)
++ {varname:=word} 如果varname存在且非null,则返回其值,否则返回word,但varname同时设置为word(如果变量为定义,则设置为默认值)
++ {varname:?word} 如果varname存在且非null,则返回其值,否则显示varname:message,同时退出脚本或命令(用于捕获变量未定义所导致的错误)
++ {varname:+word} 如果varname存在且非null,则返回word,否则返回null(测试变量是否存在)
++ 上述表达式去除:只测试varname存在
 
+###5.间接操作
+
+###6.使用source命令加载变量
 
