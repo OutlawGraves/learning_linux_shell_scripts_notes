@@ -13,7 +13,7 @@
 #####2.变量的赋值
 + 显式定义:VAR=value
 + 读取:read VAR
-+ 命令替换:VAR=`date`,VAR=$(date)
++ 命令替换:VAR=\`date\`,VAR=$(date)
 
 `variable=foo;read variable;read firstname secondname`
 
