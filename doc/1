@@ -1,0 +1,4 @@
+for param in $@
+do
+	printf "$param\n"
+done
