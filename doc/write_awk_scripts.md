@@ -31,4 +31,4 @@ awk允许你编写两个特殊的例程,它们在任何输入读取前所有输�
 主输入循环被称为"处理过程中将做的处理"是主要的处理部分.在主输入循环中,指令被写成一系列的模式/动作过程.模式是用于测试输入行的规则,以确定动作是否将应用于输入行.
 
 #####awk原理图
-(https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/pictures/awk_liucheng.png)
+![awk](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/pictures/awk_liucheng.png)
