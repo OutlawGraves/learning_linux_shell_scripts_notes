@@ -6,7 +6,7 @@
 ```
 	echo "this line of data is ignored" > test
 	awk '{print "hello world"}' test
-	echo '{print}' test2
+	awk '{print}' test2
 ```
 
 awk程序都是输入驱动型的.除非有可以在其上操作的输入行,否则将什么也不做.当调用awk程序时,它将读入所提供的脚本,并检查其中指令的语法,然后awk将对每个输入行执行脚本中的命令.如果没有来自文件中的输入行,以上的print语句将不做任何事情.
@@ -106,8 +106,6 @@ BEGIN { FS="," }
 9. **=
 
 ```
-#统计空行数
-```
 /^$/ {
 	print x+=1
 }
@@ -127,7 +125,6 @@ END { print x }
 #####2.计算学生的平均成绩
 
 ```
-#计算学生平均成绩
 BEGIN {
         num=5
         all_num=15
