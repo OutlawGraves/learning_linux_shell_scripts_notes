@@ -131,12 +131,98 @@ END { print x }
 BEGIN {
         num=5
         all_num=15
+	OFS=","
+	FS="[ *]"
 }
-{score=$2+$3+$4+$5+$6;all_score+=score;print $1,score/num }
+{score=$2+$3+$4+$5+$6;all_score+=score;print NR"."$1,score/num }
 END {
         print "all",all_score/all_num
 }
 ```
 
 ###7.系统变量
+awk中有许多系统变量或内置变量.awk有两种类型的系统变量,第一种类型定义的变量默认值可以改变,第二种类型定义的变量的值可用于报告和数据处理.
+
++ FS 定义输入数据的字段分隔符(默认值为单个或多个连续空格及制表符)
++ OFS 定义输出数据的字段分隔符(默认值为单个空格)
++ NF 定义当前输入记录的字段个数
++ RS 定义输入数据的记录分隔符(默认值为换行符)
++ ORS 定义输出数据的记录分隔符(默认值为换行符)
++ FILENAME 定义为包含当前输入数据的文件名字
++ NR 定义为当前输入记录的编号
++ FNR 定义与当前输入文件相关的当前输入记录的编号
++ CONVFMT  控制数字到字符串的转换(默认值为%.6g)
+
+###8.处理多行记录
+```
+	BEGIN { FS="\n";RS=""}
+	
+
+
+#####支票簿的核算
+```
+
+BEGIN {
+        FS="\t"
+        OFS="\t"
+}
+
+NR == 1 { balance=$1
+          next
+        }
+        { print $1,$2,$3
+          print balance += $3
+        }
+
+END {
+        print ""
+        print "retail",balance
+}
+
+```
+
+###9.关系操作符和布尔操作符
+关系操作符和布尔操作符用于在两个表达式间进行比较
+
+1. <
+2. >
+3. <=
+4. >=
+5. ==
+6. !=
+7. ~
+8. !~
+
+使用布尔操作符可以将一系列的比较组合起来.
+
+1. ||
+2. &&
+3. !
+
+`NF == 6 && NR > 1;NR > 1 && NF >=2 || $1 ~ /\t/;NR > 1 && ( NF >=2 || $1 ~ /\t/ );!( NR > 1 && NF > 3)`
+
+###10.获取文件的信息
+
+###11.格式化打印
+
+###12.向脚本传递参数(这个参数可以在命令行上设置,放在脚本的后面,文件名的前面)
+`awk 'script' var=value inputfile;awk -f scriptfile "high=$1" "low=$2" datafile;awk '{...}' dir=$(pwd) file1;awk '{...}' dir=$cwd file2`
+
+也可以在命令行参数上设置系统变量
+
+__命令行参数的一个重要限制是它们在BEGIN过程中不可用__
+
+```
+BEGIN { print n }
+n==1 { print "first file" }
+n==2 { print "second file" }
+
+{
+        if (n==1) print "first file"
+        if (n==2) print "second file"
+}
+```
+以这种方法对参数求值的问题是无法使用BEGIN过程测试或检验命令行提供的参数,只有当输入一行后它们才能够使用.
+
+`awk 'script' -v var=value inputfile`在任何输入被读入前定义参数,用-v选项来指定
 
