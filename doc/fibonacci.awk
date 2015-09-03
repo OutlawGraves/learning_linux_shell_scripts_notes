@@ -1,33 +1,25 @@
+
+function fibonaci(n){
+	if(n==0)
+		return 0
+	else if(n==1)
+		return 1
+	else 
+		return fibonaci(n-1)+fibonaci(n-2)
+}
 BEGIN {
-	times=5
 	printf "Enter number: "
 }
 
-/^([0-9]|[1-9][0-9]+)$/ {
-		if($1==0)
-			print 0
-		else if($1==1)
-			print 1
-		else{
-			fact=$1
-			for(x=$1-1;x>1;x--)
-				fact*=x
-			print fact
-		}
-		
-		exit	
-	}
-
-{ 
-	if(times==0){
-		fav[0]=2
-		print "interrput"
-		exit 1
-	}
-	printf "Enter number: " 
-	times--;	
+/^([0-9]|[1-9][0-9]+)$/{printf fibonaci($0) 
+			next
 }
 
-END { print fav[0] }
+/exit/ { exit 1 }
 
+{ printf "Enter number: "}
+
+END {
+	print "exit";
+}
 
