@@ -2,6 +2,7 @@
 some notes about learning Linux shell
 ###Linux Command Line and Shell Scripting Bible
 + [variable](https://github.com/dongjiaqiang/learning_linux_shell_scripts_notes/blob/master/doc/variable.md)
++ [array]
 
 ###Sed And Awk
 #Reference
